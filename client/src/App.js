@@ -50,21 +50,21 @@ function App() {
   return (
 
     <div className="App">
-    <div class="container">
-    <div class="row">
+    <div className="container">
+    <div className="row">
     <h1>CRUD</h1>
     <p>Primer CRUD usando REACT, NODE y MYSQL.</p>
       <div className="form">
-        <div class="input-field col s3">
+        <div className="input-field col s3">
           <label>Usuario:</label>
           <input type="text" name="movieName" onChange={(e) => {setMovieName(e.target.value)} }/>
         </div>
-        <div class="input-field col s9">
+        <div className="input-field col s9">
           <label>Tarea:</label>
           <input type="text" name="review" onChange={(e) => {setReview(e.target.value)} }/>
         </div>
         
-        <button class="btn waves-effect waves-light" onClick={submitReview}>Submit</button>
+        <button className="btn waves-effect waves-light" onClick={submitReview}>Submit</button>
 
         {movieReviewList.map((val)=>{
           return ( 
@@ -72,11 +72,11 @@ function App() {
             <h1>{val.movieName}</h1>
             <p>{val.movieReview}</p>
 
-            <div class="input-field col s12">
+            <div className="input-field col s12">
               <input type="text" id="updateInput" onChange={(e)=>{setNewReview(e.target.value)}}/>
             </div>
-            <button class="btn waves-effect waves-light" onClick={() => {deleteReview(val.movieName)}}>Delete</button>
-            <button class="btn waves-effect waves-light" onClick={()=>{updateReview(val.movieName)}}>Update</button>
+            <button className="btn waves-effect waves-light" onClick={() => {deleteReview(val.movieName)}}>Delete</button>
+            <button className="btn waves-effect waves-light" onClick={()=>{updateReview(val.movieName)}}>Update</button>
           </div>
           );
         })}
